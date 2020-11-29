@@ -1,5 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
+import { GameProvider } from "./game/GameProvider.js"
+import { GameList } from "./game/GameList.js"
 
 export const ApplicationViews = () => {
     return <>
@@ -7,7 +9,9 @@ export const ApplicationViews = () => {
             margin: "5rem 2rem",
             backgroundColor: "lightgoldenrodyellow"
         }}>
-            Application views
+            <GameProvider>
+                <Route exact path="/games" render={props => <GameList {...props} />} />
+            </GameProvider>
         </main>
     </>
 }

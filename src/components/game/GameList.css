@@ -1,0 +1,15 @@
+.game-link {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  color:rgb(48, 68, 148);
+}
+
+.game-links{
+  display: flex;
+  flex-direction: column;
+}
+
+.game-link:nth-child(odd){
+  color: black;
+}

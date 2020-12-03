@@ -5,3 +5,16 @@
 .detail {
   margin-top: 0px;
 }
+
+.cat-detail {
+  display: flex;
+}
+
+.detail-cat-name {
+  margin: 0px 10px 0px 0px;
+  font-weight: bold;
+}
+
+.detail-cat-name:nth-child(odd){
+  color: rgb(44, 76, 143);
+}

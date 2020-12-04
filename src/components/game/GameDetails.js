@@ -34,6 +34,14 @@ export const GameDetails = (props) => {
                 })
             }
             </div>
+            <h4 className="header">Reviews</h4>
+            <div>
+            {
+                game.reviews && game.reviews.map(review => {
+                    return <p className="detail-review">{review.review}</p>
+                })
+            }
+            </div>
 
         </article>
     )

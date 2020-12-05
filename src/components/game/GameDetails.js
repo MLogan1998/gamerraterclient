@@ -42,6 +42,9 @@ export const GameDetails = (props) => {
                 })
             }
             </div>
+            <div>
+            <button className="btn btn-2 btn-sep icon-create" onClick={() => {props.history.push({ pathname: `create-review/${game.id}` })}}>Review Game</button>
+            </div>
 
         </article>
     )

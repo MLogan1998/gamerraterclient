@@ -18,3 +18,12 @@
 .detail-cat-name:nth-child(odd){
   color: rgb(44, 76, 143);
 }
+.detail-review {
+  margin: 0px 10px 0px 0px;
+  font-weight: bold;
+}
+
+.detail-review:nth-child(odd){
+  color: rgb(44, 76, 143);
+  margin-bottom: 15px;
+}

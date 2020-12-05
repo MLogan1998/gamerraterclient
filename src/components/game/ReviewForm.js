@@ -1,0 +1,40 @@
+import React, { useContext, useState } from 'react'
+import { GameContext } from "./GameProvider"
+import "./ReviewForm.css"
+
+export const ReviewForm = (props) => {
+  const { createReview  } = useContext(GameContext)
+  const [currentReview, setCurrentReview] = useState({
+    review:""
+  })
+  
+  const handleControlledInputChange = (event) => {
+    const newReviewState = Object.assign({}, currentReview)
+    newReviewState[event.target.name] = event.target.value
+    setCurrentReview(newReviewState)
+}
+
+  return (
+
+<form className="gameForm">
+<h2 className="gameForm__title">Add Your Review</h2>
+<fieldset>
+<div className="form-group">
+<label htmlFor="Review">Review: </label>
+<textarea rows="5" name="review" required autoFocus className="text-area" onChange={handleControlledInputChange}></textarea>
+</div>
+</fieldset>
+<button type="submit"
+        onClick={evt => {
+            evt.preventDefault()
+            const { gameId } = props.match.params
+            const review = {
+                review: currentReview.review,
+                gameId: `${gameId}`
+            }
+            createReview(review).then(() => props.history.push({ pathname: `/games/${gameId}` }))
+        }}
+        className="btn btn-2 btn-sep icon-create">Create</button>
+</form>
+)
+}

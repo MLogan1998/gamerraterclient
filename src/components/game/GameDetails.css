@@ -4,6 +4,7 @@
 
 .detail {
   margin-top: 0px;
+  margin-bottom: 3px;
 }
 
 .cat-detail {
@@ -18,12 +19,54 @@
 .detail-cat-name:nth-child(odd){
   color: rgb(44, 76, 143);
 }
-.detail-review {
-  margin: 0px 10px 0px 0px;
-  font-weight: bold;
+
+
+.game{
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: 0 auto;
 }
 
-.detail-review:nth-child(odd){
-  color: rgb(44, 76, 143);
-  margin-bottom: 15px;
+.main_container{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.detail_container {
+  min-width: 180px;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid darkgray;
+  border-radius: 10px;
+}
+
+
+.review-detail{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.review_container, .image_container {
+  margin: 0 auto;
+  justify-content: center;
+  width: 70%;
+}
+
+.detail-review{
+  margin: 10px;
+  min-width: 170px;
+  max-width: 170px;
+  padding: 10px;
+}
+
+.control-panel{
+  width: 70%;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+img {
+  width: 250px !important;
+  margin: 5px;
 }

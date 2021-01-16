@@ -47,7 +47,7 @@
   flex-wrap: wrap;
 }
 
-.review_container, .image_container {
+.review_container, .image_container, .rating-container {
   margin: 0 auto;
   justify-content: center;
   width: 70%;
@@ -69,4 +69,9 @@
 img {
   width: 250px !important;
   margin: 5px;
+}
+
+.radio-container {
+  margin-bottom: 28px;
+  margin-top: 10px;
 }

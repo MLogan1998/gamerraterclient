@@ -1,16 +1,33 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { GameContext } from "./GameProvider.js"
 import { Link } from "react-router-dom"
+import { FormControl, Radio, FormControlLabel, RadioGroup, FormLabel, Button } from '@material-ui/core';
 
 import "./GameDetails.css"
 
 export const GameDetails = (props) => {
-    const { game, getGameById } = useContext(GameContext)
+    const { game, getGameById, createRating } = useContext(GameContext)
+    const [ rating, setRating ]= useState(1)
 
     useEffect(() => {
         const { gameId } = props.match.params
         getGameById(gameId)
     }, [])
+    
+    const handleRating = (event) => setRating(event.target.value)
+
+    const addRating = (event) =>{
+        event.preventDefault();
+        const gameId = props.match.params.gameId
+        const userId = localStorage.getItem("user_id")
+
+        const userRating = {
+            rating: parseInt(rating),
+            player: parseInt(userId),
+            game: parseInt(gameId)
+        }
+        createRating(userRating)
+    }
 
     return (
             <div className="main_container">
@@ -49,6 +66,10 @@ export const GameDetails = (props) => {
                         }
                         </div>
                     </div>
+                    <div className="detail_container">
+                        <h4 className="header">Average Rating</h4>
+                        <p className="detail">{game.avg_rating}</p>
+                    </div>
                 </article>
                 <div className="review_container">
                     <h4 className="header">Reviews</h4>
@@ -58,6 +79,26 @@ export const GameDetails = (props) => {
                             return <p className="detail-review">"{review.review}"</p>
                         })
                     }
+                    </div>
+                </div>
+                <div className="rating-container">
+                    <h4 className="header">Rate This Game:</h4>
+                    <div className="radio-container">
+                        <FormControl component="fieldset">
+                            <RadioGroup aria-label="gender" name="gender1" row >
+                                <FormControlLabel value="1" control={<Radio />} label="1" labelPlacement="top" onChange={handleRating} />
+                                <FormControlLabel value="2" control={<Radio />} label="2" labelPlacement="top" onChange={handleRating} />
+                                <FormControlLabel value="3" control={<Radio />} label="3" labelPlacement="top" onChange={handleRating} />
+                                <FormControlLabel value="4" control={<Radio />} label="4" labelPlacement="top" onChange={handleRating} />
+                                <FormControlLabel value="5" control={<Radio />} label="5" labelPlacement="top" onChange={handleRating} />
+                                <FormControlLabel value="6" control={<Radio />} label="6" labelPlacement="top" onChange={handleRating} />
+                                <FormControlLabel value="7" control={<Radio />} label="7" labelPlacement="top" onChange={handleRating} />
+                                <FormControlLabel value="8" control={<Radio />} label="8" labelPlacement="top" onChange={handleRating} />
+                                <FormControlLabel value="9" control={<Radio />} label="9" labelPlacement="top" onChange={handleRating} />
+                                <FormControlLabel value="10" control={<Radio />} label="10" labelPlacement="top" onChange={handleRating} />
+                            </RadioGroup>
+                            <Button variant="outlined" onClick={addRating}>Submit Your Rating</Button>
+                        </FormControl>
                     </div>
                 </div>
                 <div className="image_container">

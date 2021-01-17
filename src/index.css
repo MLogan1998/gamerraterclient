@@ -8,8 +8,13 @@ body, button, input, select, textarea {
     font-size: 1rem;
     line-height: 1.5;
     padding: 0;
-    margin: 0;
+		margin: 0;
+		background: #536976;
+		background: -webkit-linear-gradient(to right, #292E49, #536976);
+		background: linear-gradient(to right, #292E49, #536976);
 }
+
+
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Patua One", serif;

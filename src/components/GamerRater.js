@@ -10,7 +10,7 @@ export const GamerRater = () => (
         <Route render={() => {
             if (localStorage.getItem("lu_token")) {
                 return <>
-                    <Route render={NavBar} />
+                    <Route component={NavBar} />
                     <Route render={props => <ApplicationViews {...props} />} />
                 </>
             } else {

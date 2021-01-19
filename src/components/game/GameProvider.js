@@ -89,8 +89,18 @@ const createRating= (rating) => {
   // .then(getGame)
 }
 
+const searchGames = (searchTerm) => {
+  return fetch(`http://localhost:8000/games?q=${searchTerm}`,{
+      headers:{
+      "Authorization": `Token ${localStorage.getItem("lu_token")}`
+      }
+  })
+      .then(response => response.json())
+      .then(setGames)
+}
+
     return (
-      <GameContext.Provider value={{ games, getGames, getGameById, game, createGame, getCategories, categories, createReview, createImage, createRating }} >
+      <GameContext.Provider value={{ games, getGames, getGameById, game, createGame, getCategories, categories, createReview, createImage, createRating, searchGames }} >
           { props.children }
       </GameContext.Provider>
   )

@@ -1,31 +1,10 @@
-.header {
-  margin: 0px;
-}
-
-.detail {
-  margin-top: 0px;
-  margin-bottom: 3px;
-}
-
-.cat-detail {
-  display: flex;
-}
-
-.detail-cat-name {
-  margin: 0px 10px 0px 0px;
-  font-weight: bold;
-}
-
-.detail-cat-name:nth-child(odd){
-  color: rgb(44, 76, 143);
-}
-
-
 .game{
-  display: flex;
-  flex-wrap: wrap;
   width: 70%;
   margin: 0 auto;
+  justify-content: center;
+  border: 3px solid #d5d5d5;
+  border-radius: 15px;
+  padding: 20px;
 }
 
 .main_container{
@@ -33,24 +12,39 @@
   margin: 0 auto;
 }
 
-.detail_container {
-  min-width: 180px;
-  margin: 10px;
-  padding: 10px;
-  border: 2px solid darkgray;
-  border-radius: 10px;
-}
-
-
-.review-detail{
+.card-container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.review_container, .image_container {
-  margin: 0 auto;
-  justify-content: center;
+.card-style-h, .card-style-b {
+  padding: 11px !important;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-style-h {
+  color: #292E49 !important;
+}
+
+.card-style-b {
+  color: #536976;
+}
+
+.detail_container {
   width: 70%;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.detail-cat-name:nth-child(odd){
+  background-color: rgb(228, 228, 228);
+  color: #536976;
+}
+
+.review-detail{
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .detail-review{
@@ -66,7 +60,44 @@
   margin: 0 auto;
 }
 
+.radio-container {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+}
+
+.rating-container {
+  margin-top: 20px;
+}
+
+.radio-btn {
+  color: rgb(228, 228, 228) !important;
+  margin: 0px !important;
+}
+
+.review_container {
+  margin-top: 20px;
+}
+
+.rev-card {
+  margin: 4px;
+}
+
+.rev-body {
+  max-width: 200px;
+  padding: 5px
+}
+
+.rev-footer {
+  padding: 5px;
+}
+
 img {
-  width: 250px !important;
+  width: 175px !important;
   margin: 5px;
+  border: 2px solid #536976 !important;
+}
+
+.image_container {
+  margin-top: 20px;
 }

@@ -1,15 +1,42 @@
-.game-link {
-  text-decoration: none;
-  font-size: 22px;
-  font-weight: bold;
-  color:rgb(48, 68, 148);
+.list-h1 {
+  color: #d5d5d5;
+}
+
+.link-box {
+  box-shadow: 2px 2px 7px rgb(43, 43, 43);
 }
 
 .game-links{
   display: flex;
   flex-direction: column;
+  /* width: 40%; */
+  margin: 0 auto;
+  text-align: center;
 }
 
 .game-link:nth-child(odd){
   color: black;
+}
+
+.list-links {
+  text-decoration: none !important;
+  text-align: center !important;
+  font-weight: bold;
+  background-color: rgb(230, 229, 229) !important;
+  color: #292E49 !important;
+}
+
+.list-links:hover {
+  color: #536976 !important;
+  background-color: rgb(220, 220, 220) !important;
+}
+
+.games {
+  text-align: left;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.list-controls {
+  margin-top: 20px;
 }

@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from "react"
 import { GameContext } from "./GameProvider.js"
 import { Link } from "react-router-dom"
+import { ListGroup, ListGroupItem } from 'reactstrap'
+import { Button } from '@material-ui/core';
 
 import "./GameList.css"
 
@@ -13,18 +15,24 @@ export const GameList = (props) => {
 
     return (
         <article className="games">
-            <button className="btn btn-2 btn-sep icon-create"
-                onClick={() => {
-                    props.history.push({ pathname: "/games/new" })
-                }}
-            >Register New Game</button>
-            <div className="game-links">          
-            {
-                games.map(game => {
-                    const gamelink = `/games/${game.id}`
-                    return <Link className="nav-link game-link" key={`game--${game.id}`} to={gamelink}>{game.title}</Link>
-                })
-            }
+            <div className="game-links">
+                <h1 className="list-h1">Games</h1>
+                <ListGroup className="link-box">          
+                {
+                    games.map(game => {
+                        const gamelink = `/games/${game.id}`
+                        return <ListGroupItem  tag="a" key={`game--${game.id}`} href={gamelink} className="list-links">{game.title}</ListGroupItem>
+                    })
+                }
+                </ListGroup>
+
+            </div>
+            <div className="list-controls">
+                <Button variant="contained" color="primary"
+                    onClick={() => {
+                        props.history.push({ pathname: "/games/new" })
+                    }}
+                >Register New Game</Button>
             </div>
         </article>
     )

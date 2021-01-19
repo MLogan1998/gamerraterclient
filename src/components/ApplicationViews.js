@@ -10,8 +10,8 @@ import { ImageForm } from "./game/ImageForm"
 export const ApplicationViews = () => {
     return <>
         <main style={{
-            margin: "5rem 2rem",
-            backgroundColor: "lightgoldenrodyellow"
+            margin: "3rem 2rem",
+            // backgroundColor: "lightgoldenrodyellow"
         }}>
             <GameProvider>
                 <Route exact path="/games" render={props => <GameList {...props} />} />

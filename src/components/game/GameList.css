@@ -28,6 +28,7 @@
 
 .list-links:hover {
   color: #536976 !important;
+  background-color: rgb(220, 220, 220) !important;
 }
 
 .games {

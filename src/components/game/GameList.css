@@ -40,7 +40,7 @@
 .list-controls {
   margin-bottom: 10px;
   display: flex;
-  align-items: flex-start;
+  align-items: baseline !important;
   justify-content: space-between;
 }
 
@@ -50,4 +50,8 @@
 
 .search-list {
   color: rgb(213, 213, 213) !important;
+}
+
+#outlined-age-native-simple {
+  background-color: rgb(220, 220, 220);
 }

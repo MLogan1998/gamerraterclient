@@ -99,8 +99,18 @@ const searchGames = (searchTerm) => {
       .then(setGames)
 }
 
+const sortGames = (selected) => {
+  return fetch(`http://localhost:8000/games?orderby=${selected}`,{
+      headers:{
+      "Authorization": `Token ${localStorage.getItem("lu_token")}`
+      }
+  })
+      .then(response => response.json())
+      .then(setGames)
+}
+
     return (
-      <GameContext.Provider value={{ games, getGames, getGameById, game, createGame, getCategories, categories, createReview, createImage, createRating, searchGames }} >
+      <GameContext.Provider value={{ games, getGames, getGameById, game, createGame, getCategories, categories, createReview, createImage, createRating, searchGames, sortGames }} >
           { props.children }
       </GameContext.Provider>
   )

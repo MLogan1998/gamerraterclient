@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { GameContext } from "./GameProvider.js"
 import { Link } from "react-router-dom"
-import { FormControl, Radio, FormControlLabel, RadioGroup, FormLabel, Button } from '@material-ui/core';
+import { FormControl, Radio, FormControlLabel, RadioGroup, FormLabel, Button, TextField } from '@material-ui/core';
 import { Card, CardHeader, CardFooter, CardBody, CardTitle, CardText, ListGroup, ListGroupItem } from 'reactstrap';
 import "./GameDetails.css"
 import { withStyles } from '@material-ui/core/styles';

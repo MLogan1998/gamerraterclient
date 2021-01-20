@@ -38,5 +38,16 @@
 }
 
 .list-controls {
-  margin-top: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+::placeholder {
+  color: rgb(213, 213, 213) !important;
+}
+
+.search-list {
+  color: rgb(213, 213, 213) !important;
 }

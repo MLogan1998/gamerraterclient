@@ -55,3 +55,9 @@
 #outlined-age-native-simple {
   background-color: rgb(220, 220, 220);
 }
+
+Button, Input {
+  background: #536976 !important;
+  background: -webkit-linear-gradient(to left, #292E49, #536976) !important;
+  background: linear-gradient(to left, #292E49, #536976) !important;
+}

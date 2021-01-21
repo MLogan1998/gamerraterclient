@@ -38,7 +38,7 @@ export const GameDetails = (props) => {
             player: parseInt(userId),
             game: parseInt(gameId)
         }
-        createRating(userRating).then(setRating)
+        createRating(userRating)
     }
 
     return (

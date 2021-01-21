@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { GameContext } from "./GameProvider"
+import { Button } from '@material-ui/core';
 
 import "./GameForm.css"
 
@@ -28,8 +29,8 @@ export const GameForm = props => {
 }
 
   return (
-    <form className="gameForm">
-      <h2 className="gameForm__title">Register New Game</h2>
+    <form className="games reg-form">
+      <h2 className="list-h1">Register New Game</h2>
       <fieldset>
         <div className="form-group">
             <label htmlFor="title">Title: </label>
@@ -133,7 +134,7 @@ export const GameForm = props => {
           </select >
         </div>
       </fieldset>
-      <button type="submit"
+      <Button className="mt-1" variant="contained" color="primary" type="submit"
         onClick={evt => {
             // Prevent form from being submitted
             evt.preventDefault()
@@ -151,7 +152,7 @@ export const GameForm = props => {
 
             createGame(game).then(() => props.history.push({ pathname: "/games" }))
         }}
-        className="btn btn-2 btn-sep icon-create">Create</button>
+        className="btn btn-2 btn-sep icon-create">Register</Button>
     </form>
   )
 }

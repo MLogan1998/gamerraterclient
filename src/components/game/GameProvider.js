@@ -86,7 +86,7 @@ const createRating= (rating) => {
     body: JSON.stringify(rating)
   })
   .then(res => res.json())
-  // .then(getGame)
+  .then(getGame)
 }
 
 const searchGames = (searchTerm) => {

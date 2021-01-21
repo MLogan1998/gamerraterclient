@@ -1,4 +1,5 @@
 import React, {useState, useContext} from 'react'
+import { Button } from '@material-ui/core';
 import { GameContext } from "./GameProvider"
 
 export const ImageForm = (props) => {
@@ -21,15 +22,14 @@ export const ImageForm = (props) => {
   }
 
   return (
-    <form className="gameForm">
-      <h2 className="gameForm__title">Upload An Image</h2>
+    <form className="game img-form">
+      <h2 className="list-h1">Upload An Image</h2>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="game_image">Image: </label>
           <input type="file" id="game_image" onChange={createGameImageString} />
         </div>
       </fieldset>
-      <button type="submit"
+      <Button className="mt-1" variant="contained" color="primary" type="submit"
               onClick={evt => {
                   evt.preventDefault()
                   const { gameId } = props.match.params
@@ -39,7 +39,7 @@ export const ImageForm = (props) => {
                   }
                   createImage(image).then(() => props.history.push({ pathname: `/games/${gameId}` }))
               }}
-              className="btn btn-2 btn-sep icon-create">Upload</button>
+              className="btn btn-2 btn-sep icon-create">Upload</Button>
     </form>
   )
 }

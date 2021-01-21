@@ -24,12 +24,12 @@ export const NavBar = (props) => {
     return (
         <div>
             <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">GamerRater</NavbarBrand>
+                <NavbarBrand className="log-link" href="/">GamerRater</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink href="/games">Games</NavLink>
+                            <NavLink className="log-link" href="/games">Games</NavLink>
                         </NavItem>
                     </Nav>
                     {            

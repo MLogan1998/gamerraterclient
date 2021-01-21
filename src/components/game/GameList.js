@@ -51,7 +51,7 @@ export const GameList = (props) => {
                         id: 'outlined-age-native-simple',
                     }}
                     >
-                    <option aria-label="None" value={'id'} />
+                    <option aria-label="None" value={''} />
                     <option value={'year_released'}>Year Released</option>
                     <option value={'time_to_play'}>Time To Play</option>
                     <option value={'designer'}>Designer</option>

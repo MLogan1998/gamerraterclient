@@ -21,9 +21,6 @@
 #### Game Details: 
 ![Game Details](Screenshots/gamedetail1.jpg)
 
-#### Register Game
-![Register Game](Screenshots/newgame.jpg)
-
 ## Technologies:
 * React
 * Python

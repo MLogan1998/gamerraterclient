@@ -6,6 +6,7 @@ import { Card, CardHeader, CardFooter, CardBody, CardTitle, CardText, ListGroup,
 import "./GameDetails.css"
 import { withStyles } from '@material-ui/core/styles';
 import { grey } from '@material-ui/core/colors';
+import moment from 'moment'
 
 const GreyRadio = withStyles({
   root: {
@@ -24,7 +25,7 @@ export const GameDetails = (props) => {
     useEffect(() => {
         const { gameId } = props.match.params
         getGameById(gameId)
-    }, [])
+    }, [props.match.params.gameId])
     
     const handleRating = (event) => setRating(event.target.value)
 
@@ -38,8 +39,10 @@ export const GameDetails = (props) => {
             player: parseInt(userId),
             game: parseInt(gameId)
         }
-        createRating(userRating)
+        createRating(userRating).then(getGameById(gameId))
     }
+
+    const formattedDate = moment(game.year_released).format('YYYY')
 
     return (
             <div className="main_container">
@@ -49,7 +52,7 @@ export const GameDetails = (props) => {
                     <div className="card-container">
                         <Card>
                             <CardHeader className="card-style-h">Year Released</CardHeader>
-                            <CardBody className="card-style-b">{game.year_released}</CardBody>
+                            <CardBody className="card-style-b">{formattedDate}</CardBody>
                         </Card>
                         <Card>
                             <CardHeader className="card-style-h">Game Designer</CardHeader>
@@ -69,7 +72,9 @@ export const GameDetails = (props) => {
                         </Card>
                         <Card>
                             <CardHeader className="card-style-h">Average Rating</CardHeader>
-                            <CardBody className="card-style-b">{game.avg_rating}</CardBody>
+                            {
+                                game.avg_rating === 0 ? <CardBody className="card-style-b">No Ratings</CardBody> : <CardBody className="card-style-b">{game.avg_rating}</CardBody>
+                            }
                         </Card>
                     </div>
                     <div className="detail_container">
@@ -86,17 +91,17 @@ export const GameDetails = (props) => {
                     <h5 className="list-h1">Rate This Game</h5>
                         <div className="radio-container">
                             <FormControl component="fieldset">
-                                <RadioGroup aria-label="gender" name="gender1" color="secondary" row >
-                                    <FormControlLabel className="radio-btn" value="1" control={<GreyRadio />} label="1" labelPlacement="top" onChange={handleRating} />
-                                    <FormControlLabel className="radio-btn" value="2" control={<GreyRadio />} label="2" labelPlacement="top" onChange={handleRating} />
-                                    <FormControlLabel className="radio-btn" value="3" control={<GreyRadio />} label="3" labelPlacement="top" onChange={handleRating} />
-                                    <FormControlLabel className="radio-btn" value="4" control={<GreyRadio />} label="4" labelPlacement="top" onChange={handleRating} />
-                                    <FormControlLabel className="radio-btn" value="5" control={<GreyRadio />} label="5" labelPlacement="top" onChange={handleRating} />
-                                    <FormControlLabel className="radio-btn" value="6" control={<GreyRadio />} label="6" labelPlacement="top" onChange={handleRating} />
-                                    <FormControlLabel className="radio-btn" value="7" control={<GreyRadio />} label="7" labelPlacement="top" onChange={handleRating} />
-                                    <FormControlLabel className="radio-btn" value="8" control={<GreyRadio />} label="8" labelPlacement="top" onChange={handleRating} />
-                                    <FormControlLabel className="radio-btn" value="9" control={<GreyRadio />} label="9" labelPlacement="top" onChange={handleRating} />
-                                    <FormControlLabel className="radio-btn" value="10" control={<GreyRadio />} label="10" labelPlacement="top" onChange={handleRating} />
+                                <RadioGroup aria-label="gender" name="gender1" color="secondary" onChange={handleRating} row >
+                                    <FormControlLabel className="radio-btn" value="1" control={<GreyRadio />} label="1" labelPlacement="top" />
+                                    <FormControlLabel className="radio-btn" value="2" control={<GreyRadio />} label="2" labelPlacement="top" />
+                                    <FormControlLabel className="radio-btn" value="3" control={<GreyRadio />} label="3" labelPlacement="top" />
+                                    <FormControlLabel className="radio-btn" value="4" control={<GreyRadio />} label="4" labelPlacement="top" />
+                                    <FormControlLabel className="radio-btn" value="5" control={<GreyRadio />} label="5" labelPlacement="top" />
+                                    <FormControlLabel className="radio-btn" value="6" control={<GreyRadio />} label="6" labelPlacement="top" />
+                                    <FormControlLabel className="radio-btn" value="7" control={<GreyRadio />} label="7" labelPlacement="top" />
+                                    <FormControlLabel className="radio-btn" value="8" control={<GreyRadio />} label="8" labelPlacement="top" />
+                                    <FormControlLabel className="radio-btn" value="9" control={<GreyRadio />} label="9" labelPlacement="top" />
+                                    <FormControlLabel className="radio-btn" value="10" control={<GreyRadio />} label="10" labelPlacement="top" />
                                 </RadioGroup>
                                 
                             </FormControl>

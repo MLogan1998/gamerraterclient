@@ -49,12 +49,10 @@ fieldset {
 .form--login {
   background-size: cover;
   background-position-x: center;
-  background-image: url('./logo.png');
   z-index: 1;
   min-height: 25rem;
   min-width: 45rem;
   padding: 0 5rem;
-  background-color: hsla(0,0%,100%,0.75);
   background-blend-mode: overlay;
   background-repeat: no-repeat;
 }
@@ -67,4 +65,11 @@ fieldset {
 .dialog {
   min-width: 15rem;
   min-height: 5rem;
+}
+
+.link--register {
+  text-align: center;
+  margin-top: 10px;
+  color: #d5d5d5 !important;
+  text-decoration: none;
 }

@@ -8,7 +8,7 @@ export const GameProvider = (props) => {
     const [ categories, setCategories] = useState([])
 
     const getGames = () => {
-        return fetch("http://localhost:8000/games", {
+        return fetch("https://ml-gamer-rater.herokuapp.com/games", {
             headers:{
                 "Authorization": `Token ${localStorage.getItem("lu_token")}`
             }
@@ -18,7 +18,7 @@ export const GameProvider = (props) => {
     }
 
     const getGameById = (id) => {
-       return fetch(`http://localhost:8000/games/${id}`, {
+       return fetch(`https://ml-gamer-rater.herokuapp.com/games/${id}`, {
         headers: {
           "Authorization": `Token ${localStorage.getItem("lu_token")}`
         }
@@ -28,7 +28,7 @@ export const GameProvider = (props) => {
     }
 
     const createGame = (game) => {
-        return fetch("http://localhost:8000/games", {
+        return fetch("https://ml-gamer-rater.herokuapp.com/games", {
           method: "POST",
           headers: {
             "Authorization": `Token ${localStorage.getItem("lu_token")}`,
@@ -41,7 +41,7 @@ export const GameProvider = (props) => {
     }
 
     const getCategories = () => {
-      return fetch("http://localhost:8000/categories", {
+      return fetch("https://ml-gamer-rater.herokuapp.com/categories", {
           headers:{
               "Authorization": `Token ${localStorage.getItem("lu_token")}`
           }
@@ -51,7 +51,7 @@ export const GameProvider = (props) => {
   }
 
     const createReview = (review) => {
-      return fetch("http://localhost:8000/reviews", {
+      return fetch("https://ml-gamer-rater.herokuapp.com/reviews", {
         method: "POST",
         headers: {
           "Authorization": `Token ${localStorage.getItem("lu_token")}`,
@@ -64,7 +64,7 @@ export const GameProvider = (props) => {
   }
 
   const createImage = (review) => {
-    return fetch("http://localhost:8000/image", {
+    return fetch("https://ml-gamer-rater.herokuapp.com/image", {
       method: "POST",
       headers: {
         "Authorization": `Token ${localStorage.getItem("lu_token")}`,
@@ -77,7 +77,7 @@ export const GameProvider = (props) => {
 }
 
 const createRating= (rating) => {
-  return fetch("http://localhost:8000/rating", {
+  return fetch("https://ml-gamer-rater.herokuapp.com/rating", {
     method: "POST",
     headers: {
       "Authorization": `Token ${localStorage.getItem("lu_token")}`,
@@ -89,7 +89,7 @@ const createRating= (rating) => {
 }
 
 const searchGames = (searchTerm) => {
-  return fetch(`http://localhost:8000/games?q=${searchTerm}`,{
+  return fetch(`https://ml-gamer-rater.herokuapp.com/games?q=${searchTerm}`,{
       headers:{
       "Authorization": `Token ${localStorage.getItem("lu_token")}`
       }
@@ -99,7 +99,7 @@ const searchGames = (searchTerm) => {
 }
 
 const sortGames = (selected) => {
-  return fetch(`http://localhost:8000/games?orderby=${selected}`,{
+  return fetch(`https://ml-gamer-rater.herokuapp.com/games?orderby=${selected}`,{
       headers:{
       "Authorization": `Token ${localStorage.getItem("lu_token")}`
       }
